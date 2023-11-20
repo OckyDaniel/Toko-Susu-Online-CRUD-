@@ -69,7 +69,7 @@ def search(kodevar, etalase):
 
 
 def show(etalase):
-    print('\n\t\t\t\t===ETALASE SUSU===\n')
+    print('\n\t\t\t\t===ETALASE TOKO SUSU PALUGADA===\n')
     print('KODE ITEM\t NAMA SUSU\t\t KATEGORI\tJENIS\t STOK\t HARGA')
     for i in range(len(etalase)):
         print('   {}\t|{}\t\t|{}\t\t|{}\t|{}\t|{}'.format(etalase[i]['Kode'], etalase[i]['Nama'],etalase[i]['Kategori'],etalase[i]['Jenis'], etalase[i]['Stok'], etalase[i]['Harga']))
@@ -381,7 +381,7 @@ def buy(etalase):
 def MainMenu():
     while True:
         pilihanmenu = input('''
-    Selamat Datang di Pasar Buah
+    Selamat Datang di Toko Susu Palugada
 
     Daftar Pilihan :
     1. Menampilkan Daftar Susu
