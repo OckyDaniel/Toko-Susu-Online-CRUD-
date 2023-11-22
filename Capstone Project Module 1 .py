@@ -164,7 +164,7 @@ def create(etalase):
             cek = input("\nApakah data akan disimpan? (Y/N): ").capitalize()
             if cek == 'Y':
                 etalase.append({
-                    'Kode Item': kode,
+                    'Kode': kode,
                     'Nama': nama,
                     'Kategori': kategori.capitalize(),
                     'Jenis': jenis.capitalize(),
@@ -311,10 +311,10 @@ def buy(etalase):
             checker = None
             while True:
                 try:
-                    KodeSusu = input("\nMasukkan Kode Susu yang ingin dibeli [101-110]: ")
-                    susu = next((item for item in etalase if item['Kode'] == KodeSusu), None)
+                    Kodes = input("\nMasukkan Kode Susu yang ingin dibeli [101-110]: ")
+                    susu = next((item for item in etalase if item['Kode'] == Kodes), None)
                     if susu:
-                        KodeBuah = etalase.index(susu)
+                        Kodes = etalase.index(susu)
                     else:
                         print("\nKode Susu tidak valid. Coba lagi.")
                         continue
@@ -326,13 +326,13 @@ def buy(etalase):
                     JmlhSusu = int(input("\nMasukkan Jumlah Susu yang ingin dibeli: "))
                     if JmlhSusu <= 0:
                         print("\nJumlah susu harus lebih dari 0. Coba lagi.")
-                    elif JmlhSusu > etalase[KodeBuah]['Stok']:
-                        print('\nMaaf, stok tidak mencukupi. Stok tinggal {}'.format(etalase[KodeBuah]['Stok']))
+                    elif JmlhSusu > etalase[Kodes]['Stok']:
+                        print('\nMaaf, stok tidak mencukupi. Stok tinggal {}'.format(etalase[Kodes]['Stok']))
                     else:
-                        cart.append([etalase[KodeBuah]['Nama'], JmlhSusu, etalase[KodeBuah]['Harga'], KodeBuah])
+                        cart.append([etalase[Kodes]['Nama'], JmlhSusu, etalase[Kodes]['Harga'], Kodes])
                         
                         # Update stok
-                        etalase[KodeBuah]['Stok'] -= JmlhSusu
+                        etalase[Kodes]['Stok'] -= JmlhSusu
                         
                         print('\nDaftar Belanja Anda:\n')
                         print('\tNama\t\t|Jumlah\t|Harga')
@@ -406,5 +406,4 @@ def MainMenu():
             break
     
               
-MainMenu()   
-
+MainMenu()
