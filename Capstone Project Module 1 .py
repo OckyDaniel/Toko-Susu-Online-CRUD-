@@ -92,7 +92,7 @@ def read(etalase):
         
         elif pilih == 2:
             # tampilan pencarian
-            kodevar = (input("\n\tMasukkan Kode Untuk Mencari Data [101-109]: "))
+            kodevar = (input("\n\tMasukkan Kode Untuk Mencari Data [101-110]: "))
             search(kodevar, etalase)
             if len(search(kodevar, etalase)):
                 show(search(kodevar, etalase))
@@ -272,7 +272,7 @@ def delete(etalase):
 
         if delete == '1':
             if len(etalase) != 0:
-                kodevar = input("\n\tMasukkan Kode Untuk Mencari Data [101-109]: ")
+                kodevar = input("\n\tMasukkan Kode Untuk Mencari Data [101-110]: ")
                 index_to_delete = None
                 
                 for index, item in enumerate(etalase):
